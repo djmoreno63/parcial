@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+
+  <ion-toolbar>
+    <ion-title>Toolbar</ion-title>
+    <ion-buttons>
+      <ion-button (click)="onClick()">
+        <ion-icon slot="icon-only" name="menu"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+
+  <base href="/" />
+
+  <meta name="color-scheme" content="light dark" />
+  <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="msapplication-tap-highlight" content="no" />
+
+  <link rel="icon" type="image/png" href="assets/icon/favicon.png" />
+
+  <!-- add to homescreen for ios -->
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+</head>
+
+<body>
+  <app-root></app-root>
+  <ion-app>
+    <ion-content [fullscreen]="true">
+    
+      <ion-header>
+        <ion-toolbar>
+          <ion-title>Toolbar</ion-title>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content fullscreen="true">
+        <ion-header collapse="condense">
+          <ion-toolbar>
+            <ion-title size="large">Toolbar</ion-title>
+          </ion-toolbar>
+          <ion-toolbar>
+            <ion-searchbar></ion-searchbar>
+          </ion-toolbar>
+        </ion-header>
+  
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <div>
+            CLEAR
+          </div>
+        </ion-col>
+        <ion-col>
+          <div>
+            BUTTONS
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <div>
+            DONE
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  
+    <ion-segment (ionChange)="segmentChanged($event)">
+      <ion-segment-button value="friends">
+        <ion-label>Todos</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="enemies">
+        <ion-label>Favoritos</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+    
+    <ion-toolbar>
+      <ion-title>Progress</ion-title>
+
+      <ion-progress-bar value="0.5"></ion-progress-bar>
+    </ion-toolbar>
+  
+    <ion-button expand="full">
+        
+        Primary</ion-button>
+  
+      <ion-button expand="full" color= "tertiary">
+        <ion-icon slot="start" name="heart-outline"></ion-icon>
+        Tertiary
+        <ion-icon slot="end" name="menu"></ion-icon>
+      </ion-button>
+      <ion-button  expand="full" color= "danger">
+        <ion-icon slot="start" name="star"></ion-icon>
+        Danger
+        <ion-icon slot="end" name="ellipsis-vertical"></ion-icon>
+      </ion-button>
+    <ion-header collapse="condense">
+      <ion-toolbar>
+        <ion-title size="large">Tab 1</ion-title>
+      </ion-toolbar>
+    </ion-header>
+  
+   
+      <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content></ion-refresher-content>
+      </ion-refresher>
+    
+  
+        <app-explore-container name="Primera pestaña"></app-explore-container>
+     </ion-content>
+
+     <ion-footer>
+      <ion-toolbar>
+        <ion-title>
+          Click to Add Text
+        </ion-title>
+        <ion-buttons slot="end">
+          <ion-button id="changeText" onClick="toggleText()">
+            <ion-icon slot="start" name="refresh"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-footer>
+    </ion-app>
+</body>
+
+</html>
+<style>
+  ion-content ion-toolbar {
+    margin: 10px 0;
+  }
+</style>
